@@ -12,15 +12,15 @@ from .forms import RegisterForm
 
 from products.models import Product
 
-def index(request):
-    #recibe 3 arg, la peticion, el archivo a render y un contexto(dicc)
-    products=Product.objects.all().order_by('-id')
+# def index(request):
+#     #recibe 3 arg, la peticion, el archivo a render y un contexto(dicc)
+#     products=Product.objects.all().order_by('-id')
 
-    return render (request, 'index.html', { 
-        'message': 'Listado de productos',
-        'title': 'Productos',
-        'products':products,
-    })
+#     return render (request, 'index.html', { 
+#         'message': 'Listado de productos',
+#         'title': 'Productos',
+#         'products':products,
+#     })
 
 #autenticar y generar una sesion para usuario
 def login_view (request):
