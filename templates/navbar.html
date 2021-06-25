@@ -1,13 +1,23 @@
 {% url 'login' as login %}
 {% url 'register' as register %}
+{% url 'carts:cart' as cart %}
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Tienda</a>
+    <a class="navbar-brand" href="{% url 'index' %}">Tienda</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navb">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div id="navb" class="navbar-collapse collapse hide">
-        <ul class="nav navbar-nav ml-auto">
+        
+        
+        <ul class="navbar-nav">
+            <li class="nav-item {% if request.path == cart %}active{% endif %}">
+                <a class="nav-link" href="{{ cart }}">
+                    Mi carrito <span class="fas fa-shopping-cart"></span></a>
+            </li>
+        </ul>
+        
+        <ul class="nav navbar-nav ms-auto">
 
             {% if user.is_authenticated %}
                 <li class="navbar-item">

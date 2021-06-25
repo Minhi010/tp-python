@@ -1,28 +1,11 @@
 {% extends 'base.html' %}
- 
-{% load static %}
+
 
 {% block content %}
 <div class="col">
-    <h4> Listado de Productos</h4> <!--{{ message }}-->
-        <div class="row">
-            {% for product in product_list %} 
-            <!-- si aqui uso object_list o product_list tendria el mismo resultado -->
-                <div class="col-3 mt-5">
-                    <!--Product-->
-                    <div class="card h-100">
-                        {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="imagen del producto" height="300">
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">{{product.title}}</h5>
-                            <p class="card-text">{{ product.description }}</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+    <h4 class="text-center"> {{message}}</h4> 
+    {% include 'products/snippets/search.html' %}
+    {% include 'products/snippets/list.html'%}
 </div>
  
 {% endblock %}
