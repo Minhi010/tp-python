@@ -30,11 +30,12 @@ urlpatterns = [
     path ('usuarios/login', views.login_view, name='login'),
     path ('usuarios/logout', views.logout_view, name='logout'),
     path ('usuarios/registro', views.register, name='register'),
+    path('acerca/', views.about, name='about'),
     path('admin/', admin.site.urls),
     path('productos/', include('products.urls')),
     path('carrito/', include('carts.urls')),
     path('orden/', include('orders.urls')),
-    path('direcciones/', include('shipping_addresses.urls')),
+    # path('direcciones/', include('shipping_addresses.urls')),
 ]
 
 #para mostrar imagenes en el template

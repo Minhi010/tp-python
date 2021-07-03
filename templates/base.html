@@ -7,12 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  
 </head>
 <body>
     {% include 'navbar.html'%}
 
-    <div class="container-fluid">
+    <div class="container-lg">
         {% include 'messages.html' %}
         {% block breadcrumb %}
 
@@ -28,8 +33,7 @@
     <footer class="bg-dark text-center text-white fixed-bottom p-2">
     <!-- Copyright -->
         <div class="container">
-          © 2020 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          © 2021 Copyright: <span>JAGUARETE KAA S.A. - Dev: LauC</span>
         </div>
         <!-- Copyright -->
       </footer>

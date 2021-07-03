@@ -10,8 +10,14 @@ h1{
 }
 body{
     background-color: rgb(233, 217, 217);
+    font-family: 'Nunito', sans-serif;
 }
 
 div.direcc{
     margin-bottom: 4rem;
 }
+
+a.navbar-brand{
+  font-family: 'Josefin Slab', serif;
+}
+

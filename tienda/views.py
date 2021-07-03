@@ -71,3 +71,8 @@ def register(request):
     return render(request, 'users/register.html',{
         'form': form
     })
+
+def about(request):
+    return render(request, 'about.html',{
+    'title': '¿Quienes somos?'
+})
