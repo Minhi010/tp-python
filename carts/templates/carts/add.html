@@ -3,7 +3,8 @@
 {% load cart_extras %}
 
 {% block content %}
-    <div class="col-3">
+<div class="row" style="margin-bottom: 11rem;">
+    <div class="col">
         {% if product.image %}
             <img src="{{ product.image.url }}" alt="Imagen del producto" width="200" height="200">
         {% endif %}
@@ -27,4 +28,5 @@
             <a href="{% url 'index' %}">Seguir comprando</a>
         </div>
     </div>
+</div>
 {% endblock %}

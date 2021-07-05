@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="col">
-    {% include 'products/snippets/search.html' with query=query%} 
+<div class="col" style="width:100vh; height: fit-content;">
+    <h3 class="text-center">Resultados de la busqueda</h3>
     <!-- esta linea pone el nombre de la busqueda en la redireccion -->
     <hr>
     <p>Resultados para: {{ query }} ({{count}})</p>
-    {% include 'products/snippets/list.html'%}
+    {% include 'products/snippets/search.html'%}
 
 </div>
 {% endblock %}

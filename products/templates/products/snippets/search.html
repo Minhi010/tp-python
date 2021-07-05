@@ -1,8 +1,5 @@
-<form action="{% url 'products:search' %}">
-    <div class="input-group">
-        <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Buscar">
-        <div class="input-group-append">
-            <input type="submit" name="" value="Buscar" class="btn btn-primary">
-        </div>
-    </div>
-</form>
+<div class="row container-md" style="justify-content: space-around;">
+    {% for product in object_list %}
+        {% include 'products/snippets/product.html' %}
+    {% endfor %}
+</div>

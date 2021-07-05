@@ -13,10 +13,8 @@ class Cart(models.Model):
    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE) #uno a muchos 
    products = models.ManyToManyField(Product,through='CartProducts')#muchos a muchos
    subtotal = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)
-   total = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)
+   total = models.DecimalField(default=0.0, max_digits=6, decimal_places=2)
    created_at = models.DateTimeField(auto_now_add=True)
-   FEE=0.05 #0.5%
-
 
    def __str__(self):
        return self.cart_id
@@ -35,7 +33,7 @@ class Cart(models.Model):
        self.save()
 
    def update_total(self):
-       self.total = self.subtotal + (self.subtotal * decimal.Decimal(Cart.FEE))
+       self.total = self.subtotal
        self.save()
    
    def products_related(self):

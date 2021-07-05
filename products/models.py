@@ -13,9 +13,6 @@ class Product(models.Model):
    image=models.ImageField(upload_to='products/', null=False, blank=False)
    created_at = models.DateTimeField(auto_now_add=True)
 
-#    def save(self, *args, **kwargs):
-#         self.slug= slugify(self.title)
-#         super(Product, self).save(*args, **kwargs)
 
    def __str__(self):
        return self.title 

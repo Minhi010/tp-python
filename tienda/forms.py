@@ -3,6 +3,7 @@ from django import forms
 from django.forms.widgets import TextInput
 # from django.contrib.auth.models import User
 from users.models import User
+
 class RegisterForm(forms.Form):
     username = forms.CharField(required=True, min_length=4, max_length=50, widget=TextInput(attrs={
         'class': 'form-control',

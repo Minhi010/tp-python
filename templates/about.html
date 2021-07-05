@@ -1,9 +1,13 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block content %}
 <div>
-    <h3> {{title}}</h3>
+    <h3 class="text-center pb-2"> {{title}}</h3>
+    <img src="{% static 'images/fondo.jpg' %}" alt="imagen de gato y perro jugando" width="100%" style="margin-bottom: 2rem;">
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, distinctio dolore, perspiciatis ex ut at explicabo voluptas praesentium sint sapiente iusto a veniam expedita aspernatur. Perspiciatis soluta obcaecati fuga quibusdam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint natus, eaque, repudiandae animi iusto mollitia doloribus accusamus reiciendis quas odio amet numquam ut expedita et praesentium est quam omnis assumenda!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae molestiae error voluptatum quisquam obcaecati repellat, sapiente provident iure delectus velit eius molestias vero quas voluptatibus fuga consectetur! Explicabo, expedita molestias.</p>
 </div>
 
 {% endblock %}

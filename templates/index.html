@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-<div class="col container-fluid direcc">
+<div class="col container-fluid" >
     <h4 class="text-center"> {{message}}</h4> 
-    {% include 'products/snippets/search.html' %}
-    {% include 'products/snippets/list.html'%}
+    <div class="d-flex justify-content-center">
+        {% include 'products/snippets/cards.html' %}
+    </div>
+    {% include 'products/snippets/list.html' %}
 </div>
  
 {% endblock %}

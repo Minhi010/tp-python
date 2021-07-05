@@ -1,18 +1,16 @@
 from django.http.response import HttpResponseRedirect
 from tienda.forms import RegisterForm
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
-
+from categories.models import Category
 # from django.contrib.auth.models import User
 from users.models import User
-
 from .forms import RegisterForm
-
 from products.models import Product
+from django.contrib.auth.decorators import user_passes_test
 
 # def index(request):
 #     #recibe 3 arg, la peticion, el archivo a render y un contexto(dicc)
@@ -56,20 +54,20 @@ def logout_view (request):
 
 def register(request):
     if request.user.is_authenticated:
-        return redirect ('index')
-    form= RegisterForm(request.POST or None)
-
-    if request.method=='POST' and form.is_valid():
-        
-
-        user = form.save()
+        return redirect('index')    
+    form = RegisterForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        username = form.cleaned_data.get('username')
+        email = form.cleaned_data.get('email')
+        password = form.cleaned_data.get('password')
+        user = User.objects.create_user(username, email, password)
         if user:
             login(request, user)
-            messages.success(request,'Usuario creado exitosamente')
+            messages.success(request, 'Usuario creado exitosamente')
             return redirect('index')
-
     return render(request, 'users/register.html',{
-        'form': form
+        'form': form,
+        'title': 'Registro'
     })
 
 def about(request):
