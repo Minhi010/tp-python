@@ -1,6 +1,6 @@
-
+{% load static %}
 <h3 class="mt-2">Mas productos</h3>
-<div class="card">
+<div class="card" style="border-radius: 10px;">
     <ul class="list-group">
             {% for product in list %}
                 <a class="list-group-item list-group-item-action" href="{% url 'products:product' product.slug %}">

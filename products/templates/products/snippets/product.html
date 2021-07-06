@@ -1,11 +1,15 @@
 <!--Product-->
-<div class="card mb-5" style="width: 18rem; margin: 0 auto;"> <!--esta imagen se estiraba horriblemente-->
+<div class="card mb-5" style="width: 18rem; margin: 0 auto;  border-radius: 5px;"> <!--esta imagen se estiraba horriblemente-->
     {% if product.image %}
     <img src="{{ product.image.url }}" alt="imagen del producto" height="300">
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{product.title}}</h5>
         <p class="card-text">{{ product.description }}</p>
-        <a href="{% url 'products:product' product.slug %}" class="btn btn-primary">Comprar</a>
+        <a href="{% url 'products:product' product.slug %}" class="btn btn-outline-primary">Comprar</a>
+        {% if user.is_superuser %}
+            <a href="{% url 'products:edit' product.slug %}" class="btn btn-outline-secondary">Editar</a>
+            <a href="{% url 'products:delete' product.slug %}" class="btn btn-outline-danger">Eliminar</a>
+        {% endif %}   
     </div>
 </div>

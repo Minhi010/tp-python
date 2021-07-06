@@ -1,5 +1,5 @@
 :root{
-  --primario: #FFD5CD;
+  --primario: #ffd5cdef;
   --secundario: #EFBBCF;
   --terciario: #d2c1e2;
   --cuaternario: #8675A9;
@@ -16,15 +16,11 @@ h1{
     text-align: center;
     color:rgb(0, 0, 0);
 }
-body{
-    background-color: #d2c1e2;
-    font-family: 'Nunito', sans-serif; 
-}
 
 a.navbar-brand{
   font-family: 'Patrick Hand', cursive;
 }
  
-.navbar{
-  color: var(--secundario);
+.card{
+  border-radius: 5px;
 }

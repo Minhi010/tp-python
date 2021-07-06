@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">    
+<div class="container" style="width: 80%;">    
     <h1>{{ title }}</h1>
     <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
@@ -13,7 +13,7 @@
             {% endif %}
         </div>
         {% endfor %}
-    <button type="submit" class="btn btn-primary">Cargar Producto</button>
+    <button type="submit" class="btn btn-outline-primary">Cargar Producto</button>
     </form>
 </div>
 {% endblock %}
